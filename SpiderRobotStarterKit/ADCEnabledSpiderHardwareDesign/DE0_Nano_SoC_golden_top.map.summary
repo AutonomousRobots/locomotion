@@ -1,0 +1,17 @@
+Analysis & Synthesis Status : Successful - Sun Nov 12 12:35:16 2017
+Quartus Prime Version : 17.0.0 Build 595 04/25/2017 SJ Standard Edition
+Revision Name : DE0_Nano_SoC_golden_top
+Top-level Entity Name : DE0_Nano_SoC_golden_top
+Family : Cyclone V
+Logic utilization (in ALMs) : N/A
+Total registers : 12135
+Total pins : 230
+Total virtual pins : 0
+Total block memory bits : 2,048
+Total DSP Blocks : 0
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 0
+Total DLLs : 1

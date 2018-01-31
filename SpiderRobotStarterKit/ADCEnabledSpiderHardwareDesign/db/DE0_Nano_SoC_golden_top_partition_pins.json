@@ -1,0 +1,161 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "GPIO_1[14]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[15]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[16]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[17]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[18]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[19]",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_CONVST",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_SCK",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_SDI",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[9]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[10]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[11]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[12]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[13]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[20]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[21]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[22]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[0]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[2]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[3]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[4]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[5]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[6]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_1[23]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[7]",
+					"strict" : false
+				},
+				{
+					"name" : "FPGA_CLK1_50",
+					"strict" : false
+				},
+				{
+					"name" : "FPGA_CLK2_50",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[0]",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_SDO",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

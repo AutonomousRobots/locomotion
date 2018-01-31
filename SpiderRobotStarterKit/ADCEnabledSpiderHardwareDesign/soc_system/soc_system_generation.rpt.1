@@ -1,0 +1,149 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate /home/tjlw/Projects/SpiderRobot/Dev/ADC-EnabledSpider/DE0_NANO_SOC_SPIDER/soc_system.qsys --block-symbol-file --output-directory=/home/tjlw/Projects/SpiderRobot/Dev/ADC-EnabledSpider/DE0_NANO_SOC_SPIDER/soc_system --family="Cyclone V" --part=5CSEMA4U23C6
+Progress: Loading DE0_NANO_SOC_SPIDER/soc_system.qsys
+Progress: Reading input file
+Progress: Adding adc_0 [altera_up_avalon_adc 17.1]
+Progress: Parameterizing module adc_0
+Progress: Adding button_pio [altera_avalon_pio 17.1]
+Progress: Parameterizing module button_pio
+Progress: Adding clk_50 [clock_source 17.1]
+Progress: Parameterizing module clk_50
+Progress: Adding dipsw_pio [altera_avalon_pio 17.1]
+Progress: Parameterizing module dipsw_pio
+Progress: Adding hps_0 [altera_hps 17.1]
+Progress: Parameterizing module hps_0
+Progress: Adding jtag_uart [altera_avalon_jtag_uart 17.1]
+Progress: Parameterizing module jtag_uart
+Progress: Adding led_pio [altera_avalon_pio 17.1]
+Progress: Parameterizing module led_pio
+Progress: Adding master_non_sec [altera_jtag_avalon_master 17.1]
+Progress: Parameterizing module master_non_sec
+Progress: Adding master_secure [altera_jtag_avalon_master 17.1]
+Progress: Parameterizing module master_secure
+Progress: Adding pwm0 [TERASIC_PWM_EX 1.0]
+Progress: Parameterizing module pwm0
+Progress: Adding pwm1 [TERASIC_PWM_EX 1.0]
+Progress: Parameterizing module pwm1
+Progress: Adding pwm10 [TERASIC_PWM_EX 1.0]
+Progress: Parameterizing module pwm10
+Progress: Adding pwm11 [TERASIC_PWM_EX 1.0]
+Progress: Parameterizing module pwm11
+Progress: Adding pwm12 [TERASIC_PWM_EX 1.0]
+Progress: Parameterizing module pwm12
+Progress: Adding pwm13 [TERASIC_PWM_EX 1.0]
+Progress: Parameterizing module pwm13
+Progress: Adding pwm14 [TERASIC_PWM_EX 1.0]
+Progress: Parameterizing module pwm14
+Progress: Adding pwm15 [TERASIC_PWM_EX 1.0]
+Progress: Parameterizing module pwm15
+Progress: Adding pwm16 [TERASIC_PWM_EX 1.0]
+Progress: Parameterizing module pwm16
+Progress: Adding pwm17 [TERASIC_PWM_EX 1.0]
+Progress: Parameterizing module pwm17
+Progress: Adding pwm2 [TERASIC_PWM_EX 1.0]
+Progress: Parameterizing module pwm2
+Progress: Adding pwm3 [TERASIC_PWM_EX 1.0]
+Progress: Parameterizing module pwm3
+Progress: Adding pwm4 [TERASIC_PWM_EX 1.0]
+Progress: Parameterizing module pwm4
+Progress: Adding pwm5 [TERASIC_PWM_EX 1.0]
+Progress: Parameterizing module pwm5
+Progress: Adding pwm6 [TERASIC_PWM_EX 1.0]
+Progress: Parameterizing module pwm6
+Progress: Adding pwm7 [TERASIC_PWM_EX 1.0]
+Progress: Parameterizing module pwm7
+Progress: Adding pwm8 [TERASIC_PWM_EX 1.0]
+Progress: Parameterizing module pwm8
+Progress: Adding pwm9 [TERASIC_PWM_EX 1.0]
+Progress: Parameterizing module pwm9
+Progress: Adding sysid_qsys [altera_avalon_sysid_qsys 17.1]
+Progress: Parameterizing module sysid_qsys
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: soc_system.button_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: soc_system.dipsw_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: soc_system.hps_0: HPS Main PLL counter settings: n = 0  m = 73
+Info: soc_system.hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
+Warning: soc_system.hps_0: "Configuration/HPS-to-FPGA user 0 clock frequency" (desired_cfg_clk_mhz) requested 100.0 MHz, but only achieved 97.368421 MHz
+Warning: soc_system.hps_0: 1 or more output clock frequencies cannot be achieved precisely, consider revising desired output clock frequencies.
+Info: soc_system.jtag_uart: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Info: soc_system.sysid_qsys: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
+Info: soc_system.sysid_qsys: Time stamp will be automatically updated when this component is generated.
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate /home/tjlw/Projects/SpiderRobot/Dev/ADC-EnabledSpider/DE0_NANO_SOC_SPIDER/soc_system.qsys --synthesis=VERILOG --output-directory=/home/tjlw/Projects/SpiderRobot/Dev/ADC-EnabledSpider/DE0_NANO_SOC_SPIDER/soc_system/synthesis --family="Cyclone V" --part=5CSEMA4U23C6
+Progress: Loading DE0_NANO_SOC_SPIDER/soc_system.qsys
+Progress: Reading input file
+Progress: Adding adc_0 [altera_up_avalon_adc 17.1]
+Progress: Parameterizing module adc_0
+Progress: Adding button_pio [altera_avalon_pio 17.1]
+Progress: Parameterizing module button_pio
+Progress: Adding clk_50 [clock_source 17.1]
+Progress: Parameterizing module clk_50
+Progress: Adding dipsw_pio [altera_avalon_pio 17.1]
+Progress: Parameterizing module dipsw_pio
+Progress: Adding hps_0 [altera_hps 17.1]
+Progress: Parameterizing module hps_0
+Progress: Adding jtag_uart [altera_avalon_jtag_uart 17.1]
+Progress: Parameterizing module jtag_uart
+Progress: Adding led_pio [altera_avalon_pio 17.1]
+Progress: Parameterizing module led_pio
+Progress: Adding master_non_sec [altera_jtag_avalon_master 17.1]
+Progress: Parameterizing module master_non_sec
+Progress: Adding master_secure [altera_jtag_avalon_master 17.1]
+Progress: Parameterizing module master_secure
+Progress: Adding pwm0 [TERASIC_PWM_EX 1.0]
+Progress: Parameterizing module pwm0
+Progress: Adding pwm1 [TERASIC_PWM_EX 1.0]
+Progress: Parameterizing module pwm1
+Progress: Adding pwm10 [TERASIC_PWM_EX 1.0]
+Progress: Parameterizing module pwm10
+Progress: Adding pwm11 [TERASIC_PWM_EX 1.0]
+Progress: Parameterizing module pwm11
+Progress: Adding pwm12 [TERASIC_PWM_EX 1.0]
+Progress: Parameterizing module pwm12
+Progress: Adding pwm13 [TERASIC_PWM_EX 1.0]
+Progress: Parameterizing module pwm13
+Progress: Adding pwm14 [TERASIC_PWM_EX 1.0]
+Progress: Parameterizing module pwm14
+Progress: Adding pwm15 [TERASIC_PWM_EX 1.0]
+Progress: Parameterizing module pwm15
+Progress: Adding pwm16 [TERASIC_PWM_EX 1.0]
+Progress: Parameterizing module pwm16
+Progress: Adding pwm17 [TERASIC_PWM_EX 1.0]
+Progress: Parameterizing module pwm17
+Progress: Adding pwm2 [TERASIC_PWM_EX 1.0]
+Progress: Parameterizing module pwm2
+Progress: Adding pwm3 [TERASIC_PWM_EX 1.0]
+Progress: Parameterizing module pwm3
+Progress: Adding pwm4 [TERASIC_PWM_EX 1.0]
+Progress: Parameterizing module pwm4
+Progress: Adding pwm5 [TERASIC_PWM_EX 1.0]
+Progress: Parameterizing module pwm5
+Progress: Adding pwm6 [TERASIC_PWM_EX 1.0]
+Progress: Parameterizing module pwm6
+Progress: Adding pwm7 [TERASIC_PWM_EX 1.0]
+Progress: Parameterizing module pwm7
+Progress: Adding pwm8 [TERASIC_PWM_EX 1.0]
+Progress: Parameterizing module pwm8
+Progress: Adding pwm9 [TERASIC_PWM_EX 1.0]
+Progress: Parameterizing module pwm9
+Progress: Adding sysid_qsys [altera_avalon_sysid_qsys 17.1]
+Progress: Parameterizing module sysid_qsys
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: soc_system.button_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: soc_system.dipsw_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: soc_system.hps_0: HPS Main PLL counter settings: n = 0  m = 73
+Info: soc_system.hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
+Warning: soc_system.hps_0: "Configuration/HPS-to-FPGA user 0 clock frequency" (desired_cfg_clk_mhz) requested 100.0 MHz, but only achieved 97.368421 MHz
+Warning: soc_system.hps_0: 1 or more output clock frequencies cannot be achieved precisely, consider revising desired output clock frequencies.
+Info: soc_system.jtag_uart: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Info: soc_system.sysid_qsys: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
+Info: soc_system.sysid_qsys: Time stamp will be automatically updated when this component is generated.

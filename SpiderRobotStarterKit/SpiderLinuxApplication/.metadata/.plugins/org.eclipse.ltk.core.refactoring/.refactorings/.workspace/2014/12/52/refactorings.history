@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;DE0_NANO_SOC_SPIDER&apos;" deleteContents="true" description="Delete resource &apos;DE0_NANO_SOC_SPIDER&apos;" element1="/DE0_NANO_SOC_SPIDER" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1419675839195"/>
+</session>
