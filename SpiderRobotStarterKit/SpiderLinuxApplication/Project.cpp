@@ -45,8 +45,7 @@ int main(int argc, char *argv[]){
 	Spider.SetSpeed(50);
 
   //####################################
-	//Spider.SetJointPosition(LEG_RM,2,-90);
-	//Spider.SetJointPosition(LEG_LM,2,-90);
+	//raiseLegs(Spider);
 	
 	Spider.MoveForward(5);
   // Uncomment to use the ADC class for reading IR sensor
