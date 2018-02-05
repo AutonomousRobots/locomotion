@@ -473,19 +473,29 @@ void CSpider::TiltBackward()
 	WaitReady(ReadyTime());
 }
 
-void CSpider::MoveTripod(TRIPOD_ID Tripod,CSpiderLeg::JOINT_ID Joint,float AngleF,float AngleM,float AngleB)
+void CSpider::MoveTripod(TRIPOD_ID Pod,CSpiderLeg::JOINT_ID Joint,float AngleF,float AngleM,float AngleB)
 {
-	if(Tripod == 0)
+	if(Pod == 0)
 	{
 		m_szLeg[LEG_RF]->MoveJoint(Joint,AngleF);
 		m_szLeg[LEG_LM]->MoveJoint(Joint,AngleM);
 		m_szLeg[LEG_RB]->MoveJoint(Joint,AngleB);
 	}
-	else
+	else if(Pod == 1)
 	{
 		m_szLeg[LEG_LF]->MoveJoint(Joint,AngleF);
 		m_szLeg[LEG_RM]->MoveJoint(Joint,AngleM);
 		m_szLeg[LEG_LB]->MoveJoint(Joint,AngleB);
+	}
+	else if(Pod == 2) //bipod 1
+	{
+		m_szLeg[LEG_RF]->MoveJoint(Joint,AngleF);
+		m_szLeg[LEG_LB]->MoveJoint(Joint,AngleB);
+	}
+	else // bipod 2
+	{
+		m_szLeg[LEG_LF]->MoveJoint(Joint,AngleF);
+		m_szLeg[LEG_RB]->MoveJoint(Joint,AngleB);
 	}
 }
 
@@ -856,4 +866,33 @@ void CSpider::SetJointPosition(int leg, int joint, int position)
 {
 	m_szLeg[leg]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(joint), position);
 	WaitReady(ReadyTime());
+}
+
+void CSpider::raiseLegs(){
+	SetJointPosition(LEG_RM,2,-90);
+	SetJointPosition(LEG_LM,2,-90);
+}
+
+void CSpider::fourLeggedStatic(uint8_t Repeat_Num){
+	
+}
+
+void CSpider::fourLeggedDynamic(uint8_t Repeat_Num){
+	for(int i = 0; i < Repeat_Num; i++){
+		MoveTripod(BIPOD1,CSpiderLeg::Knee,Knee_Up_Base,Knee_Up_Base,Knee_Up_Base);
+		WaitReady(ReadyTime());
+		MoveTripod(BIPOD1,CSpiderLeg::Hip,HipF_Base+20,HipM_Base+20,HipB_Base+20);
+		MoveTripod(BIPOD2,CSpiderLeg::Hip,HipF_Base-20,HipM_Base-20,HipB_Base-20);
+		WaitReady(ReadyTime());
+		MoveTripod(BIPOD1,CSpiderLeg::Knee,Knee_Down_Base,Knee_Down_Base,Knee_Down_Base);
+		WaitReady(ReadyTime());
+		MoveTripod(BIPOD2,CSpiderLeg::Knee,Knee_Up_Base,Knee_Up_Base,Knee_Up_Base);
+		WaitReady(ReadyTime());
+		MoveTripod(BIPOD1,CSpiderLeg::Hip,HipF_Base-20,HipM_Base-20,HipB_Base-20);
+		MoveTripod(BIPOD2,CSpiderLeg::Hip,HipF_Base+20,HipM_Base+20,HipB_Base+20);
+		WaitReady(ReadyTime());
+		MoveTripod(BIPOD2,CSpiderLeg::Knee,Knee_Down_Base,Knee_Down_Base,Knee_Down_Base);
+		WaitReady(ReadyTime());
+	}
+
 }

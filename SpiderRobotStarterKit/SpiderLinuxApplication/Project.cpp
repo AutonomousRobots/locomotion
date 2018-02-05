@@ -13,12 +13,7 @@
 #include "PIO_BUTTON.h"
 #include "ADC.h"
 
-#define LEG_RF 0
-#define LEG_RM 1
-#define LEG_RB 2
-#define LEG_LF 3
-#define LEG_LM 4
-#define LEG_LB 5
+
 
 
 int main(int argc, char *argv[]){
@@ -45,9 +40,10 @@ int main(int argc, char *argv[]){
 	Spider.SetSpeed(50);
 
   //####################################
-	//raiseLegs(Spider);
 	
-	Spider.MoveForward(5);
+	Spider.raiseLegs();
+	Spider.fourLeggedDynamic(6);
+	//Spider.MoveForward(5);
   // Uncomment to use the ADC class for reading IR sensor
   // ADC adc;
   
@@ -57,8 +53,6 @@ int main(int argc, char *argv[]){
 	return 0;
 }
 
-void raiseLegs(CSpider Spider){
-	Spider.SetJointPosition(LEG_RM,2,-90);
-	Spider.SetJointPosition(LEG_LM,2,-90);
-}
+
+
 
