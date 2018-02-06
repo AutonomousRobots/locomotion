@@ -869,12 +869,79 @@ void CSpider::SetJointPosition(int leg, int joint, int position)
 }
 
 void CSpider::raiseLegs(){
+	
 	SetJointPosition(LEG_RM,2,-90);
 	SetJointPosition(LEG_LM,2,-90);
 }
 
 void CSpider::fourLeggedStatic(uint8_t Repeat_Num){
-	
+	for (int i = 0; i < Repeat_Num; i++) {
+		SetJointPosition(LEG_RF, 1, 35);
+		moveOneLeg(LEG_LF, LEG_RB);
+		WaitReady(ReadyTime());
+		moveOneLeg(LEG_RB, LEG_LF);
+		WaitReady(ReadyTime());
+		moveOneLeg(LEG_RF, LEG_LB);
+		WaitReady(ReadyTime());
+		moveOneLeg(LEG_LB, LEG_RF);
+		WaitReady(ReadyTime());
+	}
+}
+
+void CSpider::moveOneLeg(int legToMove, int opposite){
+	if (legToMove == LEG_LF) {
+		SetJointPosition(opposite, 1, 75);
+		WaitReady(ReadyTime());
+		SetJointPosition(legToMove, 1, 60);
+		WaitReady(ReadyTime());
+		SetJointPosition(legToMove, 0, HipF_Base+24);
+		SetJointPosition(LEG_RF, 0, HipF_Base-8);
+		SetJointPosition(LEG_RB, 0, HipB_Base-8);
+		SetJointPosition(LEG_LB, 0, HipB_Base-8);
+		WaitReady(ReadyTime());
+		SetJointPosition(legToMove, 1, 45);
+		SetJointPosition(opposite, 1, 45);
+	}
+	else if (legToMove == LEG_LB) {
+		SetJointPosition(opposite, 1, 65);
+		WaitReady(ReadyTime());
+		SetJointPosition(legToMove, 1, 60);
+		WaitReady(ReadyTime());
+		SetJointPosition(legToMove, 0, HipF_Base+24);
+		SetJointPosition(LEG_RF, 0, HipF_Base-8);
+		SetJointPosition(LEG_RB, 0, HipB_Base-8);
+		SetJointPosition(LEG_LF, 0, HipF_Base-8);
+		WaitReady(ReadyTime());
+		SetJointPosition(legToMove, 1, 45);
+		SetJointPosition(opposite, 1, 35);
+	}
+	else if (legToMove == LEG_RB) {
+		SetJointPosition(opposite, 1, 75);
+		WaitReady(ReadyTime());
+		SetJointPosition(legToMove, 1, 60);
+		WaitReady(ReadyTime());
+		SetJointPosition(legToMove, 0, HipF_Base+24);
+		SetJointPosition(LEG_RF, 0, HipF_Base-8);
+		SetJointPosition(LEG_LB, 0, HipB_Base-8);
+		SetJointPosition(LEG_LF, 0, HipF_Base-8);
+		WaitReady(ReadyTime());
+		SetJointPosition(legToMove, 1, 45);
+		SetJointPosition(opposite, 1, 45);
+	}
+	else if (legToMove == LEG_RF) {
+		SetJointPosition(opposite, 1, 75);
+		WaitReady(ReadyTime());
+		SetJointPosition(legToMove, 1, 50);
+		WaitReady(ReadyTime());
+		SetJointPosition(legToMove, 0, HipF_Base+24);
+		SetJointPosition(LEG_RB, 0, HipB_Base-8);
+		SetJointPosition(LEG_LB, 0, HipB_Base-8);
+		SetJointPosition(LEG_LF, 0, HipF_Base-8);
+		WaitReady(ReadyTime());
+		SetJointPosition(legToMove, 1, 35);
+		SetJointPosition(opposite, 1, 45);
+	}
+
 }
 
 void CSpider::fourLeggedDynamic(uint8_t Repeat_Num){

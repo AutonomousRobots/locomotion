@@ -42,7 +42,7 @@ int main(int argc, char *argv[]){
   //####################################
 	
 	Spider.raiseLegs();
-	Spider.fourLeggedDynamic(6);
+	Spider.fourLeggedStatic(6);
 	//Spider.MoveForward(5);
   // Uncomment to use the ADC class for reading IR sensor
   // ADC adc;

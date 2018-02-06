@@ -26,6 +26,8 @@ protected:
 	typedef enum{
 		TRIPOD1,    //RF LM RB
 		TRIPOD2,	//LF RM LB
+		BIPOD1,
+		BIPOD2,
 		TRIPOD_NUM
 	}TRIPOD_ID;
 
@@ -82,7 +84,10 @@ public:
 
 	void SetJointPosition(int leg, int joint, int position);
 
-
+	void raiseLegs();
+	void fourLeggedStatic(uint8_t Repeat_Num);
+	void fourLeggedDynamic(uint8_t Repeat_Num);
+	void moveOneLeg(int legToMove, int opposite);
 };
 
 #endif /* CSPIDER_H_ */
