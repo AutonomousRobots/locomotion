@@ -878,11 +878,11 @@ void CSpider::fourLeggedStatic(uint8_t Repeat_Num){
 	for (int i = 0; i < Repeat_Num; i++) {
 		SetJointPosition(LEG_RF, 1, 35);
 		moveOneLeg(LEG_LF, LEG_RB);
-		WaitReady(ReadyTime());
+		WaitReady(10000000);
 		moveOneLeg(LEG_RB, LEG_LF);
-		WaitReady(ReadyTime());
+		WaitReady(10000000);
 		moveOneLeg(LEG_RF, LEG_LB);
-		WaitReady(ReadyTime());
+		WaitReady(10000000);
 		moveOneLeg(LEG_LB, LEG_RF);
 		WaitReady(ReadyTime());
 	}
@@ -894,10 +894,12 @@ void CSpider::moveOneLeg(int legToMove, int opposite){
 		WaitReady(ReadyTime());
 		SetJointPosition(legToMove, 1, 60);
 		WaitReady(ReadyTime());
-		SetJointPosition(legToMove, 0, HipF_Base+24);
-		SetJointPosition(LEG_RF, 0, HipF_Base-8);
-		SetJointPosition(LEG_RB, 0, HipB_Base-8);
-		SetJointPosition(LEG_LB, 0, HipB_Base-8);
+		m_szLeg[legToMove]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(0), HipF_Base-12);
+		
+		m_szLeg[LEG_RF]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(0), m_szLeg[LEG_RF]->GetfAngle(static_cast<CSpiderLeg::JOINT_ID>(0))+8);
+		m_szLeg[LEG_RB]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(0), m_szLeg[LEG_RB]->GetfAngle(static_cast<CSpiderLeg::JOINT_ID>(0))+8);
+		m_szLeg[LEG_LB]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(0), m_szLeg[LEG_LB]->GetfAngle(static_cast<CSpiderLeg::JOINT_ID>(0))+8);
+		
 		WaitReady(ReadyTime());
 		SetJointPosition(legToMove, 1, 45);
 		SetJointPosition(opposite, 1, 45);
@@ -907,10 +909,12 @@ void CSpider::moveOneLeg(int legToMove, int opposite){
 		WaitReady(ReadyTime());
 		SetJointPosition(legToMove, 1, 60);
 		WaitReady(ReadyTime());
-		SetJointPosition(legToMove, 0, HipF_Base+24);
-		SetJointPosition(LEG_RF, 0, HipF_Base-8);
-		SetJointPosition(LEG_RB, 0, HipB_Base-8);
-		SetJointPosition(LEG_LF, 0, HipF_Base-8);
+		m_szLeg[legToMove]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(0), HipB_Base-12);
+		
+		m_szLeg[LEG_RF]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(0), m_szLeg[LEG_RF]->GetfAngle(static_cast<CSpiderLeg::JOINT_ID>(0))+8);
+		m_szLeg[LEG_RB]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(0), m_szLeg[LEG_RB]->GetfAngle(static_cast<CSpiderLeg::JOINT_ID>(0))+8);
+		m_szLeg[LEG_LF]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(0), m_szLeg[LEG_LF]->GetfAngle(static_cast<CSpiderLeg::JOINT_ID>(0))+8);
+		
 		WaitReady(ReadyTime());
 		SetJointPosition(legToMove, 1, 45);
 		SetJointPosition(opposite, 1, 35);
@@ -920,10 +924,12 @@ void CSpider::moveOneLeg(int legToMove, int opposite){
 		WaitReady(ReadyTime());
 		SetJointPosition(legToMove, 1, 60);
 		WaitReady(ReadyTime());
-		SetJointPosition(legToMove, 0, HipF_Base+24);
-		SetJointPosition(LEG_RF, 0, HipF_Base-8);
-		SetJointPosition(LEG_LB, 0, HipB_Base-8);
-		SetJointPosition(LEG_LF, 0, HipF_Base-8);
+		m_szLeg[legToMove]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(0), HipB_Base-12);
+		
+		m_szLeg[LEG_RF]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(0), m_szLeg[LEG_RF]->GetfAngle(static_cast<CSpiderLeg::JOINT_ID>(0))+8);
+		m_szLeg[LEG_LB]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(0), m_szLeg[LEG_LB]->GetfAngle(static_cast<CSpiderLeg::JOINT_ID>(0))+8);
+		m_szLeg[LEG_LF]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(0), m_szLeg[LEG_LF]->GetfAngle(static_cast<CSpiderLeg::JOINT_ID>(0))+8);
+		
 		WaitReady(ReadyTime());
 		SetJointPosition(legToMove, 1, 45);
 		SetJointPosition(opposite, 1, 45);
@@ -933,10 +939,12 @@ void CSpider::moveOneLeg(int legToMove, int opposite){
 		WaitReady(ReadyTime());
 		SetJointPosition(legToMove, 1, 50);
 		WaitReady(ReadyTime());
-		SetJointPosition(legToMove, 0, HipF_Base+24);
-		SetJointPosition(LEG_RB, 0, HipB_Base-8);
-		SetJointPosition(LEG_LB, 0, HipB_Base-8);
-		SetJointPosition(LEG_LF, 0, HipF_Base-8);
+		m_szLeg[legToMove]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(0), HipF_Base-20);
+		
+		m_szLeg[LEG_RB]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(0), m_szLeg[LEG_RB]->GetfAngle(static_cast<CSpiderLeg::JOINT_ID>(0))+8);
+		m_szLeg[LEG_LB]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(0), m_szLeg[LEG_LB]->GetfAngle(static_cast<CSpiderLeg::JOINT_ID>(0))+8);
+		m_szLeg[LEG_LF]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(0), m_szLeg[LEG_LF]->GetfAngle(static_cast<CSpiderLeg::JOINT_ID>(0))+8);
+		
 		WaitReady(ReadyTime());
 		SetJointPosition(legToMove, 1, 35);
 		SetJointPosition(opposite, 1, 45);
@@ -948,15 +956,15 @@ void CSpider::fourLeggedDynamic(uint8_t Repeat_Num){
 	for(int i = 0; i < Repeat_Num; i++){
 		MoveTripod(BIPOD1,CSpiderLeg::Knee,Knee_Up_Base,Knee_Up_Base,Knee_Up_Base);
 		WaitReady(ReadyTime());
-		MoveTripod(BIPOD1,CSpiderLeg::Hip,HipF_Base+20,HipM_Base+20,HipB_Base+20);
-		MoveTripod(BIPOD2,CSpiderLeg::Hip,HipF_Base-20,HipM_Base-20,HipB_Base-20);
+		MoveTripod(BIPOD1,CSpiderLeg::Hip,HipF_Base-20,HipM_Base-20,HipB_Base-20);
+		MoveTripod(BIPOD2,CSpiderLeg::Hip,HipF_Base+20,HipM_Base+20,HipB_Base+20);
 		WaitReady(ReadyTime());
 		MoveTripod(BIPOD1,CSpiderLeg::Knee,Knee_Down_Base,Knee_Down_Base,Knee_Down_Base);
 		WaitReady(ReadyTime());
 		MoveTripod(BIPOD2,CSpiderLeg::Knee,Knee_Up_Base,Knee_Up_Base,Knee_Up_Base);
 		WaitReady(ReadyTime());
-		MoveTripod(BIPOD1,CSpiderLeg::Hip,HipF_Base-20,HipM_Base-20,HipB_Base-20);
-		MoveTripod(BIPOD2,CSpiderLeg::Hip,HipF_Base+20,HipM_Base+20,HipB_Base+20);
+		MoveTripod(BIPOD1,CSpiderLeg::Hip,HipF_Base+20,HipM_Base+20,HipB_Base+20);
+		MoveTripod(BIPOD2,CSpiderLeg::Hip,HipF_Base-20,HipM_Base-20,HipB_Base-20);
 		WaitReady(ReadyTime());
 		MoveTripod(BIPOD2,CSpiderLeg::Knee,Knee_Down_Base,Knee_Down_Base,Knee_Down_Base);
 		WaitReady(ReadyTime());
