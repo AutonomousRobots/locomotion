@@ -41,13 +41,22 @@ int main(int argc, char *argv[]){
 
   //####################################
 	
-	Spider.raiseLegs();
-	Spider.fourLeggedStatic(1);
-	//Spider.MoveForward(5);
-  // Uncomment to use the ADC class for reading IR sensor
-  // ADC adc;
-  
-  
+	
+	// Spider.sixLeggedStatic(4);
+	// Spider.MoveForward(5);
+	// Uncomment to use the ADC class for reading IR sensor
+	// ADC adc;
+	CPIO_BUTTON BUTTON_PIO;
+	
+	Spider.sixLeggedStatic(10);
+	Spider.reset();
+	// Spider.sixLeggedDynamic(10);
+	// Spider.reset();
+	// Spider.raiseLegs();
+	// Spider.fourLeggedStatic(10);
+	// Spider.reset();
+	// Spider.fourLeggedDynamic(10);
+	// Spider.reset();
 	
 
 	return 0;

@@ -28,6 +28,8 @@ protected:
 		TRIPOD2,	//LF RM LB
 		BIPOD1,
 		BIPOD2,
+		BIPOD3,
+		QUADPOD,
 		TRIPOD_NUM
 	}TRIPOD_ID;
 
@@ -88,6 +90,8 @@ public:
 	void fourLeggedStatic(uint8_t Repeat_Num);
 	void fourLeggedDynamic(uint8_t Repeat_Num);
 	void moveOneLeg(int legToMove, int opposite);
+	void sixLeggedDynamic(uint8_t Repeat_Num);
+	void sixLeggedStatic(uint8_t Repeat_Num);
 };
 
 #endif /* CSPIDER_H_ */
