@@ -1024,3 +1024,67 @@ void CSpider::sixLeggedStatic(uint8_t Repeat_Num){
 		WaitReady(ReadyTime());
 	}
 }
+
+/*void CSpider::fourLeggedStatic(uint8_t Repeat_Num)
+{
+	for (int i = 0; i < Repeat_Num; i++) 
+        {
+            m_szLeg[LEG_RF]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(1), Knee_Up_Base); // Move RF off ground
+            m_szLeg[LEG_RF]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(0), HipF_Base+10); // adjust RF hip forward 10 
+            WaitReady(ReadyTime());
+            m_szLeg[LEG_LF]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(0), HipF_Base-10); //Displace body in triangle of stability
+            m_szLeg[LEG_LB]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(0), HipB_Base-10); //
+            m_szLeg[LEG_RB]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(0), HipB_Base-10); //
+            WaitReady(ReadyTime());
+            m_szLeg[LEG_RF]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(1), Knee_Down_Base); // Place RF on ground
+            WaitReady(ReadyTime());
+            m_szLeg[LEG_LF]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(1), Knee_Up_Base); // Move LF off ground
+            m_szLeg[LEG_LF]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(0), HipF_Base+10); // adjust F hip forward 20 (could be 10 if BD adjusts this)
+            WaitReady(ReadyTime()); // maybe not neccesary but two movements of one joint seems like it might be an issue
+            m_szLeg[LEG_LF]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(1), Knee_Down_Base); //Place LF on ground (will know here if aligned with RF)
+            WaitReady(ReadyTime()); 
+            m_szLeg[LEG_RB]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(1), Knee_Up_Base); // Repeat seqence for RB
+            m_szLeg[LEG_RB]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(0), HipB_Base+10); 
+            WaitReady(ReadyTime()); 
+            m_szLeg[LEG_RB]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(1), Knee_Down_Base); 
+            WaitReady(ReadyTime()); 
+            m_szLeg[LEG_LB]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(1), Knee_Up_Base); // Repeat seqence for LB
+            m_szLeg[LEG_LB]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(0), HipB_Base+10); 
+            WaitReady(ReadyTime()); 
+            m_szLeg[LEG_LB]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(1), Knee_Down_Base); 
+            WaitReady(ReadyTime());
+            m_szLeg[LEG_RF]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(0), HipF_Base); //restore relative postion 
+            m_szLeg[LEG_LF]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(0), HipF_Base);
+            m_szLeg[LEG_RB]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(0), HipB_Base);
+            m_szLeg[LEG_LB]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(0), HipB_Base);
+            // switch legs 
+            m_szLeg[LEG_LF]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(1), Knee_Up_Base); 
+            m_szLeg[LEG_LF]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(0), HipF_Base+10);  
+            WaitReady(ReadyTime());
+            m_szLeg[LEG_RF]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(0), HipF_Base-10); 
+            m_szLeg[LEG_LB]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(0), HipB_Base-10); 
+            m_szLeg[LEG_RB]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(0), HipB_Base-10); 
+            WaitReady(ReadyTime());
+            m_szLeg[LEG_LF]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(1), Knee_Down_Base); 
+            WaitReady(ReadyTime());
+            m_szLeg[LEG_RF]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(1), Knee_Up_Base); 
+            m_szLeg[LEG_RF]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(0), HipF_Base+10); 
+            WaitReady(ReadyTime());
+            m_szLeg[LEG_RF]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(1), Knee_Down_Base); 
+            WaitReady(ReadyTime()); 
+            m_szLeg[LEG_LB]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(1), Knee_Up_Base); 
+            m_szLeg[LEG_LB]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(0), HipB_Base+10); 
+            WaitReady(ReadyTime()); 
+            m_szLeg[LEG_LB]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(1), Knee_Down_Base); 
+            WaitReady(ReadyTime()); 
+            m_szLeg[LEG_RB]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(1), Knee_Up_Base); 
+            m_szLeg[LEG_RB]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(0), HipB_Base+10); 
+            WaitReady(ReadyTime()); 
+            m_szLeg[LEG_RB]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(1), Knee_Down_Base); 
+            WaitReady(ReadyTime());
+            m_szLeg[LEG_RF]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(0), HipF_Base); 
+            m_szLeg[LEG_LF]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(0), HipF_Base);
+            m_szLeg[LEG_RB]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(0), HipB_Base);
+            m_szLeg[LEG_LB]->MoveJoint(static_cast<CSpiderLeg::JOINT_ID>(0), HipB_Base);
+        }
+}*/
