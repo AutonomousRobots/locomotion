@@ -37,7 +37,7 @@ int main(int argc, char *argv[]){
 		if (!Spider.Standup())
 			printf("Spilder Standup failed\r\n");
 	}
-	Spider.SetSpeed(50);
+	Spider.SetSpeed(10);
 
   //####################################
 	
@@ -46,10 +46,9 @@ int main(int argc, char *argv[]){
 	// Spider.MoveForward(5);
 	// Uncomment to use the ADC class for reading IR sensor
 	// ADC adc;
-	CPIO_BUTTON BUTTON_PIO;
 	
-	Spider.sixLeggedStatic(10);
-	Spider.reset();
+	Spider.sixLeggedDynamic(20);
+	Spider.Reset();
 	// Spider.sixLeggedDynamic(10);
 	// Spider.reset();
 	// Spider.raiseLegs();
